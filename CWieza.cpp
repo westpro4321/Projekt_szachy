@@ -1,15 +1,15 @@
 #include "CWieza.h"
-#include "CFigury.h"
+#include "CFigura.h"
 
 
-    CWieza::CWieza(char kolorek) : CFigury(kolorek) {}
+    CWieza::CWieza(char kolorek) : CFigura(kolorek) {}
     CWieza::~CWieza() {}
 
     char CWieza::ZnakPionka()
     {
         return 'W';
     }
-    bool CWieza::Ruch(int PWiersz, int PKolumna, int KWiersz, int KKolumna, CFigury * Tabliczka[8][8])
+    bool CWieza::Ruch(int PWiersz, int PKolumna, int KWiersz, int KKolumna, CFigura * Tabliczka[8][8])
     {
         if (PWiersz == KWiersz)         // realizacja poruszania się wzdłuż wierszy
         {

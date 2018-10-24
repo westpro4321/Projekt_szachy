@@ -1,8 +1,8 @@
 #ifndef CSKOCZEK_H
 #define CSKOCZEK_H
-#include "CFigury.h"
+#include "CFigura.h"
 
-class CSkoczek : public CFigury
+class CSkoczek : public CFigura
 {
 public:
 
@@ -11,7 +11,7 @@ public:
 private:
     virtual char ZnakPionka();
 
-    bool Ruch(int PWiersz, int PKolumna, int KWiersz, int KKolumna, CFigury * Tabliczka[8][8]);
+    bool Ruch(int PWiersz, int PKolumna, int KWiersz, int KKolumna, CFigura * Tabliczka[8][8]);
 };
 
 #endif // CSKOCZEK_H

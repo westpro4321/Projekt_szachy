@@ -1,5 +1,5 @@
 #include "CGra.h"
-#include "CFigury.h"
+#include "CFigura.h"
 #include "CPlansza.h"
 #include<time.h>
 #include<stdlib.h>
@@ -21,7 +21,7 @@ using namespace std ;
         Szachownica.DrukujPlansze(); 
     }
 
-    void CGra::WykonajRuch(CFigury*tabliczka[8][8])           //zmienna symbolizuj¹ca atrybut tablicy obiektu CPlansza Szachownica wprowadzaj¹ca zmiany na rzewczywistej planszy
+	void CGra::WykonajRuch(CFigura*tabliczka[8][8])           //zmienna symbolizuj¹ca atrybut tablicy obiektu CPlansza Szachownica wprowadzaj¹ca zmiany na rzewczywistej planszy
     {
         using namespace std;
         bool poprawny = false;                       //zmienna logiczna odpowiadaj¹ca za informacjê czy ruch moze byæ wykonany i nie ma zagrozenia SzachMatem
@@ -54,14 +54,14 @@ using namespace std ;
                 (WierszKoniec >= 0 && WierszKoniec <= 7) &&
                 (KolumnaKoniec >= 0 && KolumnaKoniec <= 7)) {
 
-                CFigury* PunktStart = tabliczka[WierszStart][KolumnaStart];        //Obiekt klasy CFigury odpowiadaj¹cy za aktualn¹ pozycje ruszaj¹cego siê piona
+				CFigura* PunktStart = tabliczka[WierszStart][KolumnaStart];        //Obiekt klasy CFigury odpowiadaj¹cy za aktualn¹ pozycje ruszaj¹cego siê piona
 
                 if ((PunktStart != 0) && (PunktStart->NadajKolor() == KolejGracza)) {   //Je¿eli to pole nie jest puste i jest kolej aktualnego gracza
 
                     if (PunktStart->MozliwyRuch(WierszStart, KolumnaStart, WierszKoniec, KolumnaKoniec, tabliczka))        //Jezeli jest mo¿liwy ruch | przekazanie do metody obiektu CFigury MozliwyRuch()
                     {
                         // Wykonanie ruchu
-                        CFigury* tmp = tabliczka[WierszKoniec][KolumnaKoniec];                               //zmienna tymczasowa do przechowania stanu obiektu znajduj¹cego siê w wyznaczonym celu  
+						CFigura* tmp = tabliczka[WierszKoniec][KolumnaKoniec];                               //zmienna tymczasowa do przechowania stanu obiektu znajduj¹cego siê w wyznaczonym celu
                         tabliczka[WierszKoniec][KolumnaKoniec] = tabliczka[WierszStart][KolumnaStart];        //rzeczywiste (tajne )przemieszczenie figury w pozycje docelow¹
                         tabliczka[WierszStart][KolumnaStart] = 0;                                             //wyzerowanie pozycji startowej (wyjœciowej)
                         // sprawdzenie czy (tajny) ruch wywo³a³ sytuacjê Szach na planszy

@@ -1,8 +1,8 @@
 #ifndef CKON_H
 #define CKON_H
-#include "CFigury.h"
+#include "CFigura.h"
 
-class CKon : public CFigury
+class CKon : public CFigura
 {
 public:
 
@@ -11,7 +11,7 @@ public:
 private:
     virtual char ZnakPionka();
 
-    bool Ruch(int PWiersz, int PKolumna, int KWiersz, int KKolumna, CFigury * Tabliczka[8][8]);
+    bool Ruch(int PWiersz, int PKolumna, int KWiersz, int KKolumna, CFigura * Tabliczka[8][8]);
 };
 
 #endif // CKON_H

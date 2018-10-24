@@ -1,10 +1,8 @@
 TEMPLATE = app
-CONFIG += console
-CONFIG -= app_bundle
-CONFIG -= qt
+QT += gui widgets
+CONFIG += c++11
 
 SOURCES += main.cpp \
-    CFigury.cpp \
     CPion.cpp \
     CWieza.cpp \
     CKon.cpp \
@@ -12,10 +10,12 @@ SOURCES += main.cpp \
     CKrolowa.cpp \
     CKrol.cpp \
     CPlansza.cpp \
-    CGra.cpp
+    CGra.cpp \
+    CGlowneOkno.cpp \
+    CPoleSzachownicy.cpp \
+    CFigura.cpp
 
 HEADERS += \
-    CFigury.h \
     CPion.h \
     CWieza.h \
     CKon.h \
@@ -23,6 +23,12 @@ HEADERS += \
     CKrolowa.h \
     CKrol.h \
     CPlansza.h \
-    CGra.h
+    CGra.h \
+    CGlowneOkno.h \
+    CPoleSzachownicy.h \
+    CFigura.h
+
+FORMS += \
+    cglowneokno.ui
 
 

@@ -6,7 +6,7 @@
 #include "CKon.h"
 #include "CWieza.h"
 #include "CPion.h"
-#include "CFigury.h"
+#include "CFigura.h"
 
 class CPlansza
 {
@@ -20,7 +20,7 @@ public:
     void DrukujPlansze();
     bool Szach(char kolorek);
     bool MozliwoscUcieczki(char kolorek);
-    CFigury * Tablica[8][8];
+	CFigura * Tablica[8][8];
 };
 
 

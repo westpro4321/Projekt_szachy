@@ -12,12 +12,13 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-using namespace std;
+#include <QApplication>
+#include <CGlowneOkno.h>
 
-int main()
+int main(int argc, char *argv[])
 {
-    CGra gramy;
-    gramy.Start();
-
-    return 0;
+	QApplication app(argc, argv);
+	CGlowneOkno okno;
+	okno.show();
+	return app.exec();
 }

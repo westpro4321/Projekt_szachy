@@ -5,7 +5,7 @@
 #include "CKon.h"
 #include "CWieza.h"
 #include "CPion.h"
-#include "CFigury.h"
+#include "CFigura.h"
 
 #include<iostream>
 using namespace std;
@@ -132,7 +132,7 @@ using namespace std;
                                    if (Tablica[Wiersz][Kolumna]->MozliwyRuch(Wiersz, Kolumna, WierszRuchu, KolumnaRuchu, Tablica))     //przejście przez wszystkie figury i ich możliwości ruchów
                                    {
 
-                                      CFigury * Tmp = Tablica[WierszRuchu][KolumnaRuchu];
+									  CFigura * Tmp = Tablica[WierszRuchu][KolumnaRuchu];
                                       Tablica[WierszRuchu][KolumnaRuchu] = Tablica[Wiersz][Kolumna]; //wirtualne przesuniecie wszystkich figur (tajne) TJ. w CGra
                                       Tablica[Wiersz][Kolumna] = 0;
                                       bool bMozliwoscRuchu = !Szach(kolorek);  //sprawdzenie czy król jest w szachu nie bedac w szachu przeciwnik ma mozliwosc ruchu

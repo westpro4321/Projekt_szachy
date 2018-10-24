@@ -1,6 +1,6 @@
 #ifndef CGRA_H
 #define CGRA_H
-#include "CFigury.h"
+#include "CFigura.h"
 #include "CPlansza.h"
 
 class CGra
@@ -10,7 +10,7 @@ public:
     CGra();
     ~CGra();
     void Start();
-    void WykonajRuch(CFigury*tabliczka[8][8]);
+	void WykonajRuch(CFigura*tabliczka[8][8]);
     void ZmianaZawodnika();
     bool SzachMat();
 

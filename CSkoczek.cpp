@@ -1,16 +1,16 @@
 #include "CSkoczek.h"
-#include "CFigury.h"
+#include "CFigura.h"
 
 
 
-    CSkoczek::CSkoczek(char kolorek) : CFigury(kolorek) {}
+    CSkoczek::CSkoczek(char kolorek) : CFigura(kolorek) {}
     CSkoczek::~CSkoczek() {}
 
     char CSkoczek::ZnakPionka()
     {
         return 'L';
     }
-    bool CSkoczek::Ruch(int PWiersz, int PKolumna, int KWiersz, int KKolumna, CFigury * Tabliczka[8][8])
+    bool CSkoczek::Ruch(int PWiersz, int PKolumna, int KWiersz, int KKolumna, CFigura * Tabliczka[8][8])
     {
         if ((KKolumna - PKolumna == KWiersz - PWiersz) || (KKolumna - PKolumna == PWiersz - KWiersz))  // ogólna definicja ruchu skoczka po skosie(zmiana takiej samej ilosci kolumn i wierszy)
 

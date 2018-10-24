@@ -1,15 +1,15 @@
 #include "CKrolowa.h"
-#include "CFigury.h"
+#include "CFigura.h"
 
 
-    CKrolowa::CKrolowa(char kolorek) : CFigury(kolorek) {}
+	CKrolowa::CKrolowa(char kolorek) : CFigura(kolorek) {}
     CKrolowa::~CKrolowa() {}
 
     char CKrolowa:: ZnakPionka()
     {
         return 'Q';
     }
-    bool CKrolowa::Ruch(int PWiersz, int PKolumna, int KWiersz, int KKolumna, CFigury * Tabliczka[8][8])
+	bool CKrolowa::Ruch(int PWiersz, int PKolumna, int KWiersz, int KKolumna, CFigura * Tabliczka[8][8])
 
     {
 
