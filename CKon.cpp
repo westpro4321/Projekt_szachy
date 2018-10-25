@@ -2,7 +2,7 @@
 #include "CFigura.h"
 
 
-   CKon::CKon(char kolorek) : CFigura(kolorek) {}
+   CKon::CKon(char kolorek) : CFigura(kolorek, "Horse") {}
    CKon::~CKon() {}
 
     char CKon::ZnakPionka()

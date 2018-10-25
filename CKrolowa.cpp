@@ -2,7 +2,7 @@
 #include "CFigura.h"
 
 
-	CKrolowa::CKrolowa(char kolorek) : CFigura(kolorek) {}
+	CKrolowa::CKrolowa(char kolorek) : CFigura(kolorek, "Queen") {}
     CKrolowa::~CKrolowa() {}
 
     char CKrolowa:: ZnakPionka()

@@ -2,7 +2,7 @@
 #include "CFigura.h"
 
 
-    CWieza::CWieza(char kolorek) : CFigura(kolorek) {}
+	CWieza::CWieza(char kolorek) : CFigura(kolorek, "Rook") {}
     CWieza::~CWieza() {}
 
     char CWieza::ZnakPionka()

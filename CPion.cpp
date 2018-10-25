@@ -2,7 +2,7 @@
 #include "CFigura.h"
 
 
-	CPion::CPion(char kolorek) : CFigura(kolorek) {}  //konstruktor nadający kolor
+	CPion::CPion(char kolorek) : CFigura(kolorek, "Pawn") {}  //konstruktor nadający kolor
     CPion::~CPion() {}                               // destruktor
 
     char CPion::ZnakPionka() //Znak w konsoli , w GUI będzie to grafika dla danej figury

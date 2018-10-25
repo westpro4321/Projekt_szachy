@@ -25,7 +25,7 @@ CGlowneOkno::CGlowneOkno(QWidget *parent) :
 	{
 		for (int j=0; j<8; j++)
 		{
-			QColor kolor(Qt::black);
+                        QColor kolor(Qt::darkGray);
 			if ((i + j) % 2 == 0)
 				kolor = Qt::white;
 

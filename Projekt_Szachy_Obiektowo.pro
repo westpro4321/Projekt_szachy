@@ -31,4 +31,7 @@ HEADERS += \
 FORMS += \
     cglowneokno.ui
 
+RESOURCES += \
+    images.qrc
+
 

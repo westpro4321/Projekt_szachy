@@ -3,7 +3,7 @@
 
 
 
-    CKrol::CKrol(char kolorek) : CFigura(kolorek) {}
+	CKrol::CKrol(char kolorek) : CFigura(kolorek, "King") {}
     CKrol::~CKrol() {}
 
     char CKrol::ZnakPionka()

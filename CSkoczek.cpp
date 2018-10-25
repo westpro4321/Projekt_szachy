@@ -3,7 +3,7 @@
 
 
 
-    CSkoczek::CSkoczek(char kolorek) : CFigura(kolorek) {}
+	CSkoczek::CSkoczek(char kolorek) : CFigura(kolorek, "Bishop") {}
     CSkoczek::~CSkoczek() {}
 
     char CSkoczek::ZnakPionka()

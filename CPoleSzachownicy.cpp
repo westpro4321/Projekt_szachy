@@ -41,10 +41,6 @@ void CPoleSzachownicy::paint(QPainter *painter, const QStyleOptionGraphicsItem *
 	QGraphicsRectItem::paint(painter, option, widget);
 	if (figura)
 	{
-//		QColor kolor(figura->NadajKolor() == 'C' ? Qt::black : Qt::white);
-		QColor kolor(Qt::red);
-		QPen pen(kolor);
-		painter->setPen(pen);
-		painter->drawText(rect(), QString(figura->ZnakPionka()));
+                painter->drawPixmap(rect().toAlignedRect(), figura->Obrazek());
 	}
 }
