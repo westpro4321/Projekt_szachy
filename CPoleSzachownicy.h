@@ -5,22 +5,34 @@
 
 class CFigura;
 
-class CPoleSzachownicy : public QGraphicsRectItem
+class CPoleSzachownicy : public QObject, public QGraphicsRectItem
 {
+    Q_OBJECT
 public:
-	explicit CPoleSzachownicy(int y, int x, QGraphicsItem *parent = nullptr);
-	~CPoleSzachownicy();
+    explicit CPoleSzachownicy(int y, int x, QGraphicsItem *parent = nullptr);
+    ~CPoleSzachownicy();
 
-	void ustawKolor(QColor kolor);
-	void ustawFigure(CFigura *f);
-	void usunFigure();
+    void ustawKolor(QColor kolor);
+    void ustawFigure(CFigura *f);
+    CFigura *pobierzFigure();
+    CFigura * zdejmijFigure();
+    int pobierzWiersz();
+    int pobierzKolumne();
 
-	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+
+    void ustawWybrane(bool wybrane);
+
+signals:
+    void kliknieto(CPoleSzachownicy *);
 
 private:
-	int x = -1;
-	int y = -1;
-	CFigura *figura = nullptr;
+    int wiersz = -1;
+    int kolumna = -1;
+    CFigura *figura = nullptr;
+    QColor kolor;
+    bool wybrane = false;
 };
 
 #endif // CPOLESZACHOWNICY_H
