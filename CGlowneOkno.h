@@ -7,28 +7,19 @@ namespace Ui {
 class CGlowneOkno;
 }
 
-class QGraphicsScene;
-class CPlansza;
-class CPoleSzachownicy;
+class CSzachownica;
 
 class CGlowneOkno : public QMainWindow
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	explicit CGlowneOkno(QWidget *parent = 0);
-	~CGlowneOkno();
-
-protected slots:
-        void kliknietoPole(CPoleSzachownicy*);
-        void zmienGracza();
+    explicit CGlowneOkno(QWidget *parent = 0);
+    ~CGlowneOkno();
 
 private:
-	Ui::CGlowneOkno *ui;
-	QGraphicsScene *scena;
-	CPlansza *plansza;
-        CPoleSzachownicy *zaznaczonyElement = nullptr;
-        char aktualnyGracz = 'B';
+    Ui::CGlowneOkno *ui;
+    CSzachownica *szachownica;
 };
 
 #endif // CGLOWNEOKNO_H

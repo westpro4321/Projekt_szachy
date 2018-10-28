@@ -18,21 +18,28 @@ public:
     CFigura * zdejmijFigure();
     int pobierzWiersz();
     int pobierzKolumne();
+    QPoint pobierzPozycje();
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
 
     void ustawWybrane(bool wybrane);
+    bool jestWybrane();
+    void ustawMozliwyRuch(bool mozliwy);
+    bool jestMozliwyRuch();
 
 signals:
     void kliknieto(CPoleSzachownicy *);
 
+protected:
+    void ustawKolorSpecjalny(bool specjalny, QColor kolor = QColor());
+
 private:
-    int wiersz = -1;
-    int kolumna = -1;
+    QPoint pozycja;
     CFigura *figura = nullptr;
     QColor kolor;
     bool wybrane = false;
+    bool mozliwy = false;
 };
 
 #endif // CPOLESZACHOWNICY_H

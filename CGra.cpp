@@ -18,7 +18,7 @@ using namespace std ;
             system ("cls");
             ZmianaZawodnika();                                       //Zmiana zawodnika, zmiana koloru
         } while (!SzachMat());                                       // Pêtla startu gry, a¿ do momentu gdy nie bedzie SzachMata
-        Szachownica.DrukujPlansze(); 
+//        Szachownica.DrukujPlansze();
     }
 
 	void CGra::WykonajRuch(CFigura*tabliczka[8][8])           //zmienna symbolizuj¹ca atrybut tablicy obiektu CPlansza Szachownica wprowadzaj¹ca zmiany na rzewczywistej planszy
@@ -27,7 +27,7 @@ using namespace std ;
         bool poprawny = false;                       //zmienna logiczna odpowiadaj¹ca za informacjê czy ruch moze byæ wykonany i nie ma zagrozenia SzachMatem
 		bool zagrozenie = false;                     //zmienna logiczna zwracaj¹ true przy zagro¿eniu przy danym ruchu SzachMatem
         do {
-            Szachownica.DrukujPlansze();
+//            Szachownica.DrukujPlansze();
 
 			cout<<endl<<"Kolej Gracza : ";
 

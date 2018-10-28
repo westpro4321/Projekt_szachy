@@ -13,7 +13,8 @@ SOURCES += main.cpp \
     CGra.cpp \
     CGlowneOkno.cpp \
     CPoleSzachownicy.cpp \
-    CFigura.cpp
+    CFigura.cpp \
+    CSzachownica.cpp
 
 HEADERS += \
     CPion.h \
@@ -26,7 +27,8 @@ HEADERS += \
     CGra.h \
     CGlowneOkno.h \
     CPoleSzachownicy.h \
-    CFigura.h
+    CFigura.h \
+    CSzachownica.h
 
 FORMS += \
     cglowneokno.ui

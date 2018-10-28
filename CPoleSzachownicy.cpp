@@ -4,14 +4,14 @@
 #include <QGraphicsScene>
 #include <QPainter>
 #include <QDebug>
+#include <QPoint>
 #include <CFigura.h>
 
 const int WYMIAR_POLA = 100; // w pikselach
 
 CPoleSzachownicy::CPoleSzachownicy(int y, int x, QGraphicsItem *parent) :
     QGraphicsRectItem(x * WYMIAR_POLA, y * WYMIAR_POLA, WYMIAR_POLA, WYMIAR_POLA, parent),
-    wiersz(y),
-    kolumna(x)
+    pozycja(x, y)
 {
 }
 
@@ -27,9 +27,6 @@ void CPoleSzachownicy::ustawKolor(QColor kolor)
 
 void CPoleSzachownicy::ustawFigure(CFigura *f)
 {
-    if (figura)
-        delete figura;
-
     figura = f;
     scene()->update();
 }
@@ -49,12 +46,17 @@ CFigura *CPoleSzachownicy::pobierzFigure()
 
 int CPoleSzachownicy::pobierzWiersz()
 {
-    return wiersz;
+    return pozycja.y();
 }
 
 int CPoleSzachownicy::pobierzKolumne()
 {
-    return kolumna;
+    return pozycja.x();
+}
+
+QPoint CPoleSzachownicy::pobierzPozycje()
+{
+    return pozycja;
 }
 
 void CPoleSzachownicy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -67,7 +69,7 @@ void CPoleSzachownicy::paint(QPainter *painter, const QStyleOptionGraphicsItem *
     }
 }
 
-void CPoleSzachownicy::mousePressEvent(QGraphicsSceneMouseEvent *event)
+void CPoleSzachownicy::mousePressEvent(QGraphicsSceneMouseEvent *)
 {
     emit kliknieto(this);
 }
@@ -75,13 +77,34 @@ void CPoleSzachownicy::mousePressEvent(QGraphicsSceneMouseEvent *event)
 void CPoleSzachownicy::ustawWybrane(bool wybrane)
 {
     this->wybrane = wybrane;
-    if (wybrane)
+    ustawKolorSpecjalny(wybrane, Qt::blue);
+}
+
+bool CPoleSzachownicy::jestWybrane()
+{
+    return wybrane;
+}
+
+void CPoleSzachownicy::ustawMozliwyRuch(bool mozliwy)
+{
+    this->mozliwy = mozliwy;
+    ustawKolorSpecjalny(mozliwy, Qt::darkBlue);
+}
+
+bool CPoleSzachownicy::jestMozliwyRuch()
+{
+    return mozliwy;
+}
+
+void CPoleSzachownicy::ustawKolorSpecjalny(bool specjalny, QColor kolor)
+{
+    if (specjalny)
     {
-        setBrush(Qt::blue);
+        setBrush(kolor);
     }
     else
     {
-        setBrush(kolor);
+        setBrush(this->kolor);
     }
     scene()->update();
 }

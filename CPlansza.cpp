@@ -52,33 +52,6 @@ using namespace std;
             }
         }
     }
-    void CPlansza::DrukujPlansze()  //drukowanie planszy z rozstawionymi figurami
-    {
-		int i=0;
-		
-	    cout<<"  0   "<<" 1 "<<"  2 "<<"  3 "<<"  4 "<<"  5 "<<"  6 "<<"  7 "<<endl;
-		
-        for (int W = 0; W<8; ++W)
-        {
-            for (int K = 0; K<8; ++K)
-            {
-                if (Tablica[W][K] != 0)
-				{
-					if(K==0)
-					{ 
-						cout <<i<<"|"<<Tablica[W][K]->NadajKolor() <<Tablica[W][K]->ZnakPionka()<<"|";
-						i++;
-					}else
-                    cout <<"|"<<Tablica[W][K]->NadajKolor() <<Tablica[W][K]->ZnakPionka()<<"|"; //drukowanie pionków zgodnie z zasadą kolor_rodzaj czyli np: BQ, CH , BL
-				}else if(K==0){
-                    cout <<i<<"|  |";
-				    i++;
-				}else
-					cout<<"|  |";
-            }
-            cout << endl;
-        }
-    }
 
     bool CPlansza::Szach(char kolorek)   //funkcja przeszukująca plansze czy któryś z pionów może dokonać bicia króla
 
@@ -149,6 +122,16 @@ using namespace std;
                        }
                    }
                 }
-             }
-    }
+			}
+	}
+
+	void CPlansza::PrzesunFigure(QPoint pocz, QPoint doc)
+	{
+		CFigura *f = Tablica[doc.y()][doc.x()];
+		if (f)
+			delete f;
+
+		Tablica[doc.y()][doc.x()] = Tablica[pocz.y()][pocz.x()];
+		Tablica[pocz.y()][pocz.x()] = nullptr;
+	}
 
